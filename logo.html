@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hover Water Drop Social Icons</title>
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#fff;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.social-row{
+  display:flex;
+  gap:40px;
+}
+
+/* wrapper */
+.social-item{
+  position:relative;
+  width:80px;
+  height:120px;
+  display:flex;
+  justify-content:center;
+}
+
+/* label (hidden by default) */
+.social-item span{
+  position:absolute;
+  top:0;
+  background:var(--color);
+  color:#fff;
+  padding:6px 14px;
+  font-size:14px;
+  font-weight:600;
+  border-radius:6px;
+  opacity:0;
+  transform:translateY(10px);
+  transition:0.3s ease;
+  pointer-events:none;
+}
+
+/* water drop pointer */
+.social-item span::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-8px;
+  transform:translateX(-50%);
+  border-left:8px solid transparent;
+  border-right:8px solid transparent;
+  border-top:8px solid var(--color);
+}
+
+/* circle icon */
+.icon{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:#fff;
+  border:2px solid var(--color);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:30px;
+  color:var(--color);
+  position:relative;
+  overflow:hidden;
+  transition:0.4s ease;
+  cursor:pointer;
+}
+
+/* sliding bg */
+.icon::before{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-100%;
+  width:100%;
+  height:100%;
+  background:var(--color);
+  transition:0.4s ease;
+  z-index:0;
+}
+
+.icon i{
+  position:relative;
+  z-index:1;
+}
+
+/* hover effects */
+.social-item:hover span{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.social-item:hover .icon{
+  transform:translateY(20px);
+}
+
+.social-item:hover .icon::before{
+  bottom:0;
+}
+
+.social-item:hover .icon i{
+  color:#fff;
+}
+
+/* brand colors */
+.facebook{ --color:#1877f2; }
+.instagram{ --color:#e4405f; }
+.twitter{ --color:#1da1f2; }
+.youtube{ --color:#ff0000; }
+.linkedin{ --color:#0077b5; }
+
+</style>
+</head>
+
+<body>
+
+<div class="social-row">
+
+  <div class="social-item facebook">
+    <span>Facebook</span>
+    <div class="icon">
+      <i class="fab fa-facebook-f"></i>
+    </div>
+  </div>
+
+  <div class="social-item instagram">
+    <span>Instagram</span>
+    <div class="icon">
+      <i class="fab fa-instagram"></i>
+    </div>
+  </div>
+
+  <div class="social-item twitter">
+    <span>Twitter</span>
+    <div class="icon">
+      <i class="fab fa-twitter"></i>
+    </div>
+  </div>
+
+  <div class="social-item youtube">
+    <span>YouTube</span>
+    <div class="icon">
+      <i class="fab fa-youtube"></i>
+    </div>
+  </div>
+
+  <div class="social-item linkedin">
+    <span>LinkedIn</span>
+    <div class="icon">
+      <i class="fab fa-linkedin-in"></i>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
